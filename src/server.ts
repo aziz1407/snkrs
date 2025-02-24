@@ -1,4 +1,8 @@
-console.log("snkrs!");
+ import dotenv from "dotenv";
 
-const person: string = "Martin";
-const number: number = 231; 
+
+ dotenv.config();
+
+ console.log("PORT:", process.env.PORT);
+
+ console.log("MONGO_URL:", process.env.MONGO_URL);
