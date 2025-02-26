@@ -9,7 +9,7 @@ const MemberSchema = new Schema({
     memberType: {
         type: String,
         enum: MemberType,
-        default: MemberType.USER,
+        default: MemberType.REGULAR,
     },
 
     memberStatus: {

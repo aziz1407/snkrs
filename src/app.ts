@@ -9,6 +9,8 @@ import cookieParser from 'cookie-parser';
 import session from "express-session";
 import ConnectMongoDB from "connect-mongodb-session";
 import routerAdmin from "./routerAdmin";
+import { T } from "./libs/types/common";
+import { MORGAN_FORMAT } from "./config";
 // import { T } from './libs/types/common';
 
 // 2.TCP, Core level connection, works solely with sessions, increases and updates
@@ -24,7 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use("/uploads", express.static("./uploads"));
 app.use(express.urlencoded({extended: true})); //TRAD API
 app.use(express.json());  //REST API
-// app.use(morgan(MORGAN_FORMAT));
+app.use(morgan(MORGAN_FORMAT));
 app.use(cors({ credentials: true, origin: true }))
 app.use(cookieParser());
 
@@ -41,11 +43,11 @@ app.use(  // 1. Building badge, 2. Reading badges
     })
 ); //req+session+member
 
-// app.use(function(req, res, next) {
-//   const sessionInstance = req.session as T;
-//   res.locals.member = sessionInstance.member;
-//   next();
-// });
+app.use(function(req, res, next) {
+  const sessionInstance = req.session as T;
+  res.locals.member = sessionInstance.member;
+  next();
+});
 
 // 3: VIEWS
 app.set('views', path.join(__dirname, 'views')); 
