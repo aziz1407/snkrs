@@ -11,6 +11,7 @@ import ConnectMongoDB from "connect-mongodb-session";
 import routerAdmin from "./routerAdmin";
 import { T } from "./libs/types/common";
 import { MORGAN_FORMAT } from "./config";
+import router from "./router";
 // import { T } from './libs/types/common';
 
 // 2.TCP, Core level connection, works solely with sessions, increases and updates
@@ -55,7 +56,7 @@ app.set('view engine', 'ejs');
 
 // 4: ROUTERS
 app.use('/admin', routerAdmin); //SSR: EJS
-// app.use('/', router);           //CSR: REACT
+app.use('/', router);           //CSR: REACT
 
 export default app;
 

@@ -10,6 +10,7 @@ export enum HttpCode {
 }
 
 export enum Message {
+    ADMIN_IS_UNIQUE = "Only one Admin exists",
     SOMETHING_WENT_WRONG = "Something went wrong!",
     NO_DATA_FOUND = "No data been found!",
     CREATE_FAILED = "Create is failed!",
