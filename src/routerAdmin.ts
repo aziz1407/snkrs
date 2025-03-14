@@ -17,6 +17,11 @@ routerAdmin
   .get("/login", adminController.getLogin)
   .post("/login", adminController.processLogin);
 
+  routerAdmin
+  .get("/check-me", adminController.checkAuthSession)
+  .get("/logout", adminController.logout);
+
+//SPA
 routerAdmin.get("/signup", adminController.getSign);
 
 routerAdmin.get("/login", adminController.getLogin);

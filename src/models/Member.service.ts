@@ -93,7 +93,6 @@ class MemberService {
         input.memberPassword,
         member.memberPassword
       );
-      console.log("isMatch:", isMatch);
       if (!isMatch) {
         throw new Errors(HttpCode.UNAUTHORIZED, Message.WRONG_PASSWORD);
       }

@@ -38,7 +38,7 @@ adminController.getLogin = (req: Request, res: Response) => {
   }
 };
 
-adminController.processSignup = async (req: Request, res: Response) => {
+adminController.processSignup = async (req: AdminRequest, res: Response) => {
   try {
     console.log("processSignUp");
     console.log("body:", req.body);
@@ -46,7 +46,11 @@ adminController.processSignup = async (req: Request, res: Response) => {
     const newMember: MemberInput = req.body;
     newMember.memberType = MemberType.ADMIN;
     const result = await memberService.processSignup(newMember);
+
+    req.session.member = result;
+    req.session.save(() => {
     res.send(result);
+    });
   } catch(err) {
     console.log("Error, processSignUp:", err);
     res.send(err);
@@ -58,7 +62,10 @@ adminController.processLogin = async (req: AdminRequest, res: Response) => {
       console.log("Welcome, processLogin");
       const input: LoginInput = req.body;
       const result = await memberService.processLogin(input);
-      res.send(result);
+      req.session.member = result;
+         req.session.save(() => {
+          res.send(result);
+         });
   }
   catch (err) {
       console.log('Error, processLogin!', err);
@@ -67,6 +74,34 @@ adminController.processLogin = async (req: AdminRequest, res: Response) => {
           alert("${message}");
           window.location.replace('/admin/login');
           </script>`);
+  }
+};
+
+
+adminController.checkAuthSession = async (req: AdminRequest, res: Response) => {
+  try {
+      console.log("checkAuthSession");
+     if(req.session?.member) 
+      res.send(`<script> alert("${req.session.member.memberNick}") </script>`);
+     else res.send(`<script> alert("${Message.NOT_AUTHENTICATED}") </script>`);
+     //
+  }
+  catch (err) { 
+      console.log('Error, checkAuthSession!', err);
+      res.send(err);
+  }
+};
+
+adminController.logout = async (req: AdminRequest, res: Response) => {
+  try {
+      console.log("logout");
+      req.session.destroy(() => {
+      res.redirect("/admin");
+    });
+  }
+  catch (err) {
+      console.log('Error, logout!', err);
+      res.redirect("/admin");
   }
 };
 
