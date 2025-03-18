@@ -8,7 +8,8 @@ import {
 const productSchema = new Schema({
    productStatus: {
     type: String,
-    enum: ProductStatus.PAUSE,
+    enum: ProductStatus,
+    default: ProductStatus.PAUSE
    },
 
    productCollection: {
@@ -32,16 +33,16 @@ const productSchema = new Schema({
     required: true,
   },
 
-  productFilter: {
-    type: String,
-    enum: ProductSize,
-    default: ProductFilter.MEN,
-  },
-
   productSize: {
     type: Number,
     enum: ProductSize,
-    default: ProductSize.M,
+    default: ProductSize.L,
+  },
+
+  productFilter: {
+    type: String,
+    enum: ProductFilter,
+    default: ProductFilter.MEN,
   },
 
   productDesc: {
@@ -61,6 +62,6 @@ const productSchema = new Schema({
 { timestamps: true }    
 );
 
-productSchema.index({productName: 1, productSize: 1, productVolume: 1},
+productSchema.index({productName: 1, ProductFilter: 1, ProductSize: 1},
 {unique: true});
 export default mongoose.model('Product', productSchema);

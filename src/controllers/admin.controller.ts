@@ -1,4 +1,4 @@
-import { Request, Response } from "express";
+import { NextFunction, Request, Response } from "express";
 import { T } from "../libs/types/common";
 import { AdminRequest, LoginInput, MemberInput } from "../libs/types/member";
 import Errors, { HttpCode, Message } from "../libs/error";
@@ -104,5 +104,21 @@ adminController.logout = async (req: AdminRequest, res: Response) => {
       res.redirect("/admin");
   }
 };
+
+adminController.verifyRestaurant = ( //middleware 
+  req: AdminRequest, 
+  res: Response,
+  next: NextFunction
+) => {
+  if(req.session?.member?.memberType === MemberType.ADMIN) {
+  req.member = req.session.member;
+  next();
+  }
+  else { 
+  const message = Message.NOT_AUTHENTICATED
+  res.send(`<script> alert("${message}"); window.location.replace('/admin/login'); </script>`);
+  }
+}
+
 
 export default adminController;
