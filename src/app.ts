@@ -12,7 +12,6 @@ import routerAdmin from "./routerAdmin";
 import { T } from "./libs/types/common";
 import { MORGAN_FORMAT } from "./config";
 import router from "./router";
-// import { T } from './libs/types/common';
 
 // 2.TCP, Core level connection, works solely with sessions, increases and updates
 const MongoDBStore = ConnectMongoDB(session);

@@ -40,16 +40,17 @@ adminController.getLogin = (req: Request, res: Response) => {
 
 adminController.processSignup = async (req: AdminRequest, res: Response) => {
   try {
-    console.log("processSignUp");
-    console.log("body:", req.body);
+    console.log("processSignup");
+        const file = req.file;
+       if(!file) throw new Errors(HttpCode.BAD_REQUEST, Message.NO_IMAGE);
 
-    const newMember: MemberInput = req.body;
-    newMember.memberType = MemberType.ADMIN;
-    const result = await memberService.processSignup(newMember);
-
-    req.session.member = result;
+        const newMember: MemberInput = req.body
+        newMember.memberImage = file?.path.replace(/\\/g, "/");
+        newMember.memberType = MemberType.ADMIN;
+        const result = await memberService.processSignup(newMember);
+        req.session.member = result;
     req.session.save(() => {
-    res.send(result);
+    res.redirect("/admin/product/all");
     });
   } catch(err) {
     console.log("Error, processSignUp:", err);

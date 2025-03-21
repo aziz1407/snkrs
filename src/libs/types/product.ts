@@ -1,22 +1,22 @@
 import { ProductCollection, ProductFilter, ProductSize, ProductStatus }
  from "../enums/product.enum";
- import {ObjectId, Types, Document} from "mongoose";
+ import {ObjectId, Types} from "mongoose";
 
- export interface Product extends Document {  // Extending Document ensures the Mongoose properties are included
+ export interface Product {
     _id: Types.ObjectId;
     productStatus: ProductStatus;
     productCollection: ProductCollection;
     productName: string;
     productPrice: number;
     productLeftCount: number;
-    productFilter: ProductFilter;
     productSize: ProductSize;
+    productFilter: ProductFilter;
     productDesc?: string;
     productImages: string[];
     productViews: number;
     createdAt: Date;
     updatedAt: Date;
-  }
+}
 
 export interface ProductInquiry {
     order: string;
@@ -33,7 +33,7 @@ export interface ProductInput {
     productPrice: number;
     productLeftCount: number;
     productFilter?: ProductFilter;
-    productSize?: number;
+    productSize?: ProductSize;
     productDesc?: string;
     productImages?: string[];
     productViews?: number;

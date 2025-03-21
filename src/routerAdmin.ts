@@ -32,15 +32,15 @@ routerAdmin.get(
 routerAdmin.post(
   "/product/create",
   adminController.verifyRestaurant,
-  makeUploader("products").single("productImage"),
+  makeUploader("products").array("productImages", 5),
   productController.createNewProduct
 );
 
-// routerAdmin.post(
-//   "/product/:id",
-//   adminController.verifyRestaurant, //:id=param=which product is being updated
-//   productController.updateChosenProduct
-// );
+routerAdmin.post(
+  "/product/:id",
+  adminController.verifyRestaurant, //:id=param=which product is being updated
+  productController.updateChosenProduct
+);
 
 //SPA
 routerAdmin.get("/signup", adminController.getSign);
