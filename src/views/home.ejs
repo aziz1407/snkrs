@@ -8,28 +8,28 @@
     <div class="navigation-menu">
       <ul class="nav justify-content-center">
         <li class="nav-item" style="cursor: pointer">
-          <a class="nav-link active" href="/admin">Home</a>
+          <a class="nav-link active" href="/admin" style="color: #3747c2;">Home</a>
         </li>
         <% if(!member) { %>
         <li class="nav-item" style="cursor: pointer">
-          <a class="nav-link" href="/admin/signup">Signup</a>
+          <a class="nav-link" href="/admin/signup" style="color: #3747c2;">Signup</a>
         </li>
         <li class="nav-item" style="cursor: pointer">
-          <a class="nav-link" href="/admin/login">Login</a>
+          <a class="nav-link" href="/admin/login" style="color: #3747c2;">Login</a>
         </li>
         <% } else { %>
         <li class="nav-item" style="cursor: pointer">
-          <a class="nav-link" href="/admin/product/all">Menu</a>
+          <a class="nav-link" href="/admin/product/all" style="color: #3747c2;">Menu</a>
         </li>
         <li class="nav-item" style="cursor: pointer">
-          <a class="nav-link" href="/admin/user/all">Users</a>
+          <a class="nav-link" href="/admin/user/all" style="color: #3747c2;">Users</a>
         </li>
         <li
           class="nav-item"
           style="cursor: pointer"
           onclick="return confirm('Do you want to logout?')"
         >
-          <a class="nav-link" href="/admin/logout">Logout</a>
+          <a class="nav-link" href="/admin/logout" style="color: #3747c2;">Logout</a>
         </li>
         <% } %>
       </ul>

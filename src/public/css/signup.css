@@ -6,10 +6,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-  animation: gradient 15s ease infinite;
-  -webkit-animation: gradient 15s ease infinite;
-  background-size: 200% 200%;
+  background-image: url('/img/idealogin1.jpg');
+  background-size: cover; /* Ensures the image covers the entire container */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
 }
 
 .signup-container a {
@@ -19,12 +19,14 @@
 
 .signup-container .signup-frame {
   position: relative;
-  width: 420px;
+  width: 500px;
   height: auto;
   display: flex;
   flex-direction: column;
   border-radius: 10px;
   background: #ffffff;
+  border-radius: 15px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
   padding: 25px;
 }
 
@@ -54,6 +56,7 @@
   line-height: 18px;
 }
 
+
 .signup-container .sign-up-frame input {
   position: relative;
   margin-top: 10px;
@@ -63,7 +66,15 @@
   background: #f6f5f5;
   border: 1px solid #dddddd;
   border-radius: 8px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
+
+/* Hover Effect */
+.signup-container .sign-up-frame input:hover {
+  border-color: #007bff; /* Changes border color to blue */
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.3); /* Soft blue glow */
+}
+
 
 .signup-container .media-frame {
   position: relative;
@@ -81,6 +92,13 @@
   height: 93%;
   display: flex;
   border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect */
+.signup-container .media-frame .upload-img-frame:hover {
+  transform: scale(1.02); /* Slight zoom effect */
+  box-shadow: 0 0 12px rgba(0, 123, 255, 0.3); /* Soft blue glow */
 }
 
 .signup-container .upload-img-frame .delete-img {
@@ -165,27 +183,43 @@
   color: #4f547b;
 }
 
-/* Background animation */
-@-webkit-keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+.file-input-label {
+  display: inline-block;
+  background-color: #007bff; /* Blue color */
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+/* Hover Effect */
+.file-input-label:hover {
+  background-color: #0056b3; /* Darker blue */
+  transform: scale(1.05); /* Slight zoom effect */
 }
+
+.btn {
+  display: inline-block;
+  background-color: #007bff; /* Blue color */
+  color: white;
+  padding: 10px 20px;
+  font-size: 18px;
+
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Hover Effect */
+.btn:hover {
+  background-color: #0056b3; /* Darker blue */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+

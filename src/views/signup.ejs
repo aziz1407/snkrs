@@ -7,54 +7,54 @@
     <form onsubmit="return validateSignupForm()" action="/admin/signup" method="POST" enctype="multipart/form-data">
       <div class="signup-frame" style="width: 650px">
         <div class="signup-top">
-          <span>Signup</span>
-          <div>Go back <a href="/admin" style="color: #6440fb">Home</a></div>
-          <p>
-            Already signed up?
+          <span style="font-family: arial; font-size: 25px; margin-left: 30%; font-style: italic; font-weight: bold;">Signup to Snkrs!</span>
+          <div style="font-family: arial; font-size: 17px; font-style: italic;">Back <a href="/admin" style="color: #6440fb">Home</a></div>
+          <p style="font-family: arial; font-size: 17px; font-style: italic;">
+            Already a member?
             <a href="/admin/login" style="color: #6440fb">Login</a>
           </p>
         </div>
 
         <div class="sign-input-frame" style="justify-content: space-between">
           <div class="sign-up-frame">
-            <label>Admin *</label>
+            <label style="font-family: arial; font-size: 17px; font-style: italic;">Admin #</label>
             <input
               type="text"
               name="memberNick"
               class="member-nick"
-              placeholder="Username"
+              placeholder="Insert username..."
               value=""
             />
           </div>
           <div class="sign-up-frame">
-            <label>Phone *</label>
+            <label style="font-family: arial; font-size: 17px; font-style: italic;">Phone #</label>
             <input
               type="text"
               name="memberPhone"
               class="member-phone"
-              placeholder="Phone"
+              placeholder="Insert your number..."
               value=""
             />
           </div>
         </div>
         <div class="sign-input-frame" style="justify-content: space-between">
           <div class="sign-up-frame">
-            <label>Password *</label>
+            <label style="font-family: arial; font-size: 17px; font-style: italic;">Password #</label>
             <input
               type="password"
               name="memberPassword"
               class="member-password"
-              placeholder="Password"
+              placeholder="Insert your password"
               value=""
             />
           </div>
           <div class="sign-up-frame">
-            <label>Repeat password *</label>
+            <label style="font-family: arial; font-size: 17px; font-style: italic;">Repeat password #</label>
             <input
               type="password"
               name="confirmPassword"
               class="confirm-password"
-              placeholder="Repeat password"
+              placeholder="Reassure password..."
               value=""
             />
           </div>
@@ -62,9 +62,9 @@
 
         <div class="signup-input-frame">
           <div class="media-frame">
-            <img class="upload-img-frame" src="/img/snkrs.jpeg" />
+            <img class="upload-img-frame" src="/img/default.jpeg" />
             <div class="upload-container">
-              <span class="media-text">Product image</span>
+              <span class="media-text" style="font-family: arial; font-size: 17px; margin-top: 10px; font-style: italic;">Product image</span>
               <div
                 class="file-box bs3-primary preview-image"
                 style="margin-top: 25px; display: flex"
@@ -74,8 +74,8 @@
                   value="Choose image"
                   disabled="disabled"
                 />
-                <label for="input-file" class="file-input-label"
-                  >Upload Image</label
+                <label for="input-file" class="file-input-label" style="background-color:  #007bff;"
+                  >Upload!</label
                 >
                 <input
                   type="file"
@@ -84,7 +84,7 @@
                   name="memberImage"
                 />
               </div>
-              <p class="thumbnail-desc">
+              <p class="thumbnail-desc" style="font-family: arial; font-size: 17px; font-style: italic;">
                 Please upload restaurant image.<br />
                 Attention only: .jpg, .jpeg, or .png. <br />
                 formats allowed!

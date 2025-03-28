@@ -8,6 +8,7 @@ import {
 import Errors, { HttpCode, Message } from "../libs/error";
 import { MemberStatus, MemberType } from "../libs/enums/member.enum";
 import * as bcrypt from "bcryptjs";
+import { shapeIntoMongooseObjectId } from "../config";
 // import { shapeIntoMongooseObjectId } from "../../libs/config";
 
 class MemberService {
@@ -18,6 +19,16 @@ class MemberService {
   }
 
   //SPA
+
+  public async getAdmin(): Promise<Member> {
+    const result = await this.memberModel
+      .findOne({ memberType: MemberType.ADMIN })
+      .exec();
+
+    if (!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
+
+    return result as Member;
+  }
   
   public async signup(input: LoginInput): Promise<Member> {
     const salt = await bcrypt.genSalt();
@@ -101,6 +112,30 @@ class MemberService {
       const result = await this.memberModel.findById(member._id).exec();
       return result as Member;
     }
-  }
+
+    public async getUsers(): Promise<Member[]> {
+      //method
+      const result = await this.memberModel
+        .find({ memberType: MemberType.REGULAR })
+        .exec();
+  
+      if (!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
+  
+      return result as Member[];
+    }
+
+    public async updateChosenUser(input: MemberUpdateInput): Promise<Member> {
+      input._id = shapeIntoMongooseObjectId(input._id);
+      const result = await this.memberModel
+        .findByIdAndUpdate({ _id: input._id }, input, { new: true })
+        .exec();
+  
+      if (!result) throw new Errors(HttpCode.NOT_MODIFIED, Message.UPDATE_FAILED);
+  
+      return result as Member;
+    }
+  };
+
+  
 
 export default MemberService;

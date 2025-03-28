@@ -5,6 +5,7 @@ import uploader from "./libs/utils/uploader";
 // import productController from "./controllers/product.controllers";
 const router = express.Router();
 /** Members **/
+router.get("/member/admin", memberController.getAdmin);
 router.post("/member/signup", memberController.signup);
 router.post("/member/login", memberController.login);
 

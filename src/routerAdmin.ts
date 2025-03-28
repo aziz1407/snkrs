@@ -15,6 +15,7 @@ routerAdmin.get("/", adminController.goHome)
 );
 
 routerAdmin
+  .get("/signup", adminController.getSign)
   .get("/login", adminController.getLogin)
   .post("/login", adminController.processLogin);
 
@@ -42,9 +43,19 @@ routerAdmin.post(
   productController.updateChosenProduct
 );
 
-//SPA
-routerAdmin.get("/signup", adminController.getSign);
+//**User**/
 
-routerAdmin.get("/login", adminController.getLogin);
+routerAdmin.get(
+  "/user/all",
+  adminController.verifyRestaurant,
+  adminController.getUsers
+);
+
+routerAdmin.post(
+  "/user/edit",
+  adminController.verifyRestaurant,
+  adminController.updateChosenUser
+);
+
 
 export default routerAdmin;
