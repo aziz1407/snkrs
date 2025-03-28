@@ -55,10 +55,12 @@
                     <td><%= value.productLeftCount %></td>
                   <td>
                     <select class="spec-select new-product-status" id="<%= value._id %>">
-                      <option value="PAUSE" <%= value.productStatus === 'PAUSE'
-                      ? 'selected': '' %> >PAUSE</option>
-                      <option value="PROCESS" <%= value.productStatus === 'PROCESS'
-                      ? 'selected': '' %>>PROCESS</option>
+                      <option value="HOLD" <%= value.productStatus === 'PAUSE'
+                      ? 'selected': '' %> >HOLD</option>
+                      <option value="SALE" <%= value.productStatus === 'PROCESS'
+                      ? 'selected': '' %>> SALE</option>
+                      <option value="SOLD" <%= value.productStatus === 'PROCESS'
+                      ? 'selected': '' %>> SOLD</option>
                       <option value="DELETE" <%= value.productStatus === 'DELETE'
                       ? 'selected': '' %>>DELETE</option>
                     </select>

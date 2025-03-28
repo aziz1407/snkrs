@@ -12,8 +12,9 @@ export enum ProductFilter {  //instead of productVolume
 }
 
 export enum ProductStatus {
-    PAUSE = "PAUSE",
-    PROCESS = "PROCESS",
+    HOLD = "HOLD",
+    SALE = "SALE",
+    SOLD = "SOLD",
     DELETE = "DELETE",
 }
 
