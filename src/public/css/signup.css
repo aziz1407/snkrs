@@ -1,225 +1,154 @@
 .signup-container {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-image: url('/img/idealogin1.jpg');
-  background-size: cover; /* Ensures the image covers the entire container */
-  background-position: center; /* Centers the image */
-  background-repeat: no-repeat; /* Prevents the image from repeating */
-}
-
-.signup-container a {
-  text-decoration: none;
-  color: black;
-}
-
-.signup-container .signup-frame {
-  position: relative;
-  width: 500px;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  border-radius: 10px;
-  background: #ffffff;
-  border-radius: 15px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-  padding: 25px;
-}
-
-.signup-container .signup-frame .sign-input-frame {
-  position: relative;
-  width: 100%;
-  height: auto;
-  display: flex;
-  flex-direction: row;
-}
-
-.signup-container .sign-input-frame .sign-up-frame {
-  position: relative;
-  margin-top: 15px;
-  width: 49%;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-}
-
-.signup-container .sign-up-frame label {
-  margin-bottom: 0px;
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 18px;
-}
-
-
-.signup-container .sign-up-frame input {
-  position: relative;
-  margin-top: 10px;
-  padding-left: 20px;
-  width: 100%;
-  height: 55px;
-  background: #f6f5f5;
-  border: 1px solid #dddddd;
-  border-radius: 8px;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Hover Effect */
-.signup-container .sign-up-frame input:hover {
-  border-color: #007bff; /* Changes border color to blue */
-  box-shadow: 0 0 8px rgba(0, 123, 255, 0.3); /* Soft blue glow */
-}
-
-
-.signup-container .media-frame {
-  position: relative;
-  margin-top: 15px;
-  width: 100%;
-  height: 250px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.signup-container .media-frame .upload-img-frame {
-  position: relative;
-  width: 275px;
-  height: 93%;
-  display: flex;
-  border-radius: 15px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Hover Effect */
-.signup-container .media-frame .upload-img-frame:hover {
-  transform: scale(1.02); /* Slight zoom effect */
-  box-shadow: 0 0 12px rgba(0, 123, 255, 0.3); /* Soft blue glow */
-}
-
-.signup-container .upload-img-frame .delete-img {
-  position: absolute;
-  width: 37px;
-  height: 37px;
-  right: 5%;
-  top: 5%;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #ffffff;
-  box-shadow: 0px 6px 15px rgba(64, 79, 104, 0.05);
-  border-radius: 8px;
-}
-
-.signup-container .media-frame .upload-container {
-  position: relative;
-  margin-left: 30px;
-  width: 75%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.signup-container .media-text {
-  font-family: "GT Walsheim Pro";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 18px;
-  color: #140342;
-}
-
-.signup-container .file-box input[type="file"] {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
-}
-
-.signup-container .file-box label {
-  margin-bottom: 0px;
-  width: 138px;
-  height: 55px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #6a7a99;
-  border-radius: 0px 8px 8px 0px;
-  font-family: "GT Walsheim Pro";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 26px;
-  color: #ffffff;
-}
-
-.signup-container .file-box .upload-name {
-  position: relative;
+  min-height: 100%; 
   padding: 20px;
-  width: 85%;
-  height: 55px;
-  display: flex;
-  background: #ffffff;
-  border: 1px solid #dddddd;
-  border-radius: 8px 0px 0px 8px;
+  background-image: url('/img/idealogin1.jpg');
+  background-size: cover;
+  background-position: center;
 }
 
-.signup-container .thumbnail-desc {
-  margin-top: 25px;
-  font-family: "GT Walsheim Pro";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 26px;
-  color: #4f547b;
+
+.signup-frame {
+  width: 900px; /* Adjust width for a wider container */
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
 }
 
-.file-input-label {
-  display: inline-block;
-  background-color: #007bff; /* Blue color */
-  color: white;
-  padding: 10px 20px;
-  font-size: 16px;
+.signup-header {
+  text-align: center;
+  margin-bottom: 15px; /* Reduced space for compactness */
+}
+
+.signup-header h2 {
+  font-family: 'Arial', sans-serif;
+  font-size: 32px; /* Increased font size */
   font-weight: bold;
-  border: none;
-  border-radius: 5px;
+  color: #333;
+}
+
+.signup-header p, .signup-header a {
+  font-size: 18px; /* Increased font size */
+  color: #6440fb;
+}
+
+.input-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* Reduced gap between inputs */
+  margin-bottom: 15px;
+}
+
+.input-section label {
+  font-size: 18px; /* Increased label size */
+  font-weight: bold;
+}
+
+.input-section input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #f9f9f9;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  font-size: 18px; /* Larger input text */
+}
+
+.input-section input:hover {
+  border-color: skyblue; /* Sky blue on hover */
+  box-shadow: 0 0 8px rgba(135, 206, 250, 0.3); /* Sky blue box shadow */
+}
+
+.input-section input:focus {
+  border-color: skyblue; /* Sky blue on focus */
+  box-shadow: 0 0 10px rgba(135, 206, 250, 0.4); /* Sky blue box shadow */
+}
+
+.upload-section {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15px; /* Reduced space */
+}
+
+.upload-preview {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.upload-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.file-input input {
+  margin-left: 40px;
+  margin-bottom: 10px;
+  width: 80%;  /* Full width to fully occupy the space */
+  padding: 12px;
+  background-color: transparent;
+  border: 1px solid #ddd;
+  border-radius: 8px;
   cursor: pointer;
-  text-align: center;
-  transition: background-color 0.3s, transform 0.2s;
+  transition: all 0.3s ease;
+  font-size: 18px; /* Larger text for file input */
 }
 
-/* Hover Effect */
-.file-input-label:hover {
-  background-color: #0056b3; /* Darker blue */
-  transform: scale(1.05); /* Slight zoom effect */
+.file-input input:hover {
+  background-color: #f0f0f0;
+  border-color: skyblue; /* Sky blue on hover */
 }
 
-.btn {
-  display: inline-block;
-  background-color: #007bff; /* Blue color */
+.signup-btn {
+  width: 100%;
+  padding: 14px;
+  background-color: #ff7f00;
   color: white;
-  padding: 10px 20px;
-  font-size: 18px;
-
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
+  font-size: 20px; /* Larger button text */
   cursor: pointer;
-  text-align: center;
   transition: background-color 0.3s, transform 0.2s;
 }
 
-/* Hover Effect */
-.btn:hover {
-  background-color: #0056b3; /* Darker blue */
-  transform: scale(1.05); /* Slight zoom effect */
+.signup-btn:hover {
+  background-color: skyblue; /* Sky blue for the button hover */
+  transform: scale(1.05);
 }
 
+a {
+  text-decoration: none;
+  color: #ff7f00;
+}
+
+a:hover {
+  color: skyblue; /* Sky blue on all links */
+}
+
+.back-home, .login-link {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 18px; /* Larger text */
+  padding: 12px 25px;  /* Adjust padding for a more compact look */
+  border-radius: 25px; /* Rounds the corners */
+  background-color: #fff;
+  transition: all 0.3s ease;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto; /* Ensures the width is auto, not full width */
+}
+
+.back-home:hover, .login-link:hover {
+  background-color: skyblue; /* Sky blue background on hover */
+  color: white;
+  transform: scale(1.05);
+}

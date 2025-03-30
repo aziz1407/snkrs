@@ -27,7 +27,7 @@
 
     <div class="restaurant-menu-frame">
       <div class="board">
-        <div class="dishes-table">
+        <div class="products-table">
           <span class="new-prod-txt" style="margin-bottom: 30px">
             STORE MENU
           </span>
@@ -82,11 +82,11 @@
         onsubmit="return validateForm()"
           action="/admin/product/create"
           method="POST"
-          class="dish-container"
+          class="product-container"
           enctype="multipart/form-data"
         >
           <div class="long-input" style="display: flex; align-items: center">
-            <span class="new-dish-txt">NEW PRODUCT DETAIL</span>
+            <span class="new-prod-txt">NEW PRODUCT DETAIL</span>
           </div>
           <div class="login-input-frame">
             <div class="long-input">
@@ -138,7 +138,7 @@
             </div>
 
             <div class="half-input" id="product-collection">
-              <label>Dish Volume</label>
+              <label>Product Size</label>
               <select class="product-size" name="productSize">
                 <option value="S">40</option>
                 <option value="M" selected>41</option>

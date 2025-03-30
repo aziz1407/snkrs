@@ -5,45 +5,46 @@
 <body>
   <div class="login-container">
     <form action="/admin/login" method="POST">
-      <div class="login-frame" style="width: 450px">
+      <div class="login-frame">
         <div class="login-top">
-          <span style="font-family: arial; font-size: 25px; margin-left: 30%; font-style: italic; font-weight: bold;">Login to Snkrs!</span>
-          <div style="font-family: arial; font-size: 17px; font-style: italic;">Back <a href="/admin" style="color: #6440fb">Home</a></div>
-          <p style="font-family: arial; font-size: 17px; font-style: italic;">
+          <span>Login to Snkrs!</span>
+          <div>Back <a href="/admin">Home</a></div>
+          <p>
             Not registered yet?
-            <a href="/admin/signup" style="color: #6440fb">Signup</a>
+            <a href="/admin/signup">Signup</a>
           </p>
         </div>
 
-        <div class="login-input-frame" style="justify-content: space-between">
+        <div class="login-input-frame">
           <div class="login-input-container">
-            <label style="font-family: arial; font-size: 17px; font-style: italic;">Admin #</label>
+            <label for="memberNick">Admin #</label>
             <input
               type="text"
               name="memberNick"
+              id="memberNick"
               class="member-nick"
               placeholder="Insert username..."
-              value=""
-              required
-            />
-          </div>
-        </div>
-        <div class="login-input-frame" style="justify-content: space-between">
-          <div class="login-input-container">
-            <label style="font-family: arial; font-size: 17px; font-style: italic;">Password #</label>
-            <input
-              type="password"
-              name="memberPassword"
-              class="member-password"
-              placeholder="Insert your password"
-              value=""
               required
             />
           </div>
         </div>
 
         <div class="login-input-frame">
-          <button class="login-btn btn" name="login" type="submit">
+          <div class="login-input-container">
+            <label for="memberPassword">Password #</label>
+            <input
+              type="password"
+              name="memberPassword"
+              id="memberPassword"
+              class="member-password"
+              placeholder="Insert your password..."
+              required
+            />
+          </div>
+        </div>
+
+        <div class="login-input-frame">
+          <button class="login-btn" name="login" type="submit">
             Login
           </button>
         </div>
