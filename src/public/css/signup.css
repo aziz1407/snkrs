@@ -9,9 +9,8 @@
   background-position: center;
 }
 
-
 .signup-frame {
-  width: 900px; /* Adjust width for a wider container */
+  width: 900px; 
   background: #fff;
   padding: 30px;
   border-radius: 15px;
@@ -20,30 +19,30 @@
 
 .signup-header {
   text-align: center;
-  margin-bottom: 15px; /* Reduced space for compactness */
+  margin-bottom: 15px; 
 }
 
 .signup-header h2 {
   font-family: 'Arial', sans-serif;
-  font-size: 32px; /* Increased font size */
+  font-size: 40px;
   font-weight: bold;
-  color: #333;
+  color: #080808;
 }
 
 .signup-header p, .signup-header a {
-  font-size: 18px; /* Increased font size */
+  font-size: 22px; 
   color: #6440fb;
 }
 
 .input-section {
   display: flex;
   flex-direction: column;
-  gap: 12px; /* Reduced gap between inputs */
-  margin-bottom: 15px;
+  gap: 15px; 
+  margin-bottom: 17px;
 }
 
 .input-section label {
-  font-size: 18px; /* Increased label size */
+  font-size: 22px; 
   font-weight: bold;
 }
 
@@ -54,17 +53,17 @@
   border-radius: 8px;
   background: #f9f9f9;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  font-size: 18px; /* Larger input text */
+  font-size: 20px; 
 }
 
 .input-section input:hover {
-  border-color: skyblue; /* Sky blue on hover */
-  box-shadow: 0 0 8px rgba(135, 206, 250, 0.3); /* Sky blue box shadow */
+  border-color: skyblue; 
+  box-shadow: 0 0 8px rgba(135, 206, 250, 0.3); 
 }
 
 .input-section input:focus {
-  border-color: skyblue; /* Sky blue on focus */
-  box-shadow: 0 0 10px rgba(135, 206, 250, 0.4); /* Sky blue box shadow */
+  border-color: skyblue; 
+  box-shadow: 0 0 10px rgba(135, 206, 250, 0.4); 
 }
 
 .upload-section {
@@ -72,7 +71,7 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  margin-top: 15px; /* Reduced space */
+  margin-top: 15px; 
 }
 
 .upload-preview {
@@ -80,7 +79,7 @@
   height: 160px;
   border-radius: 50%;
   overflow: hidden;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .upload-preview img {
@@ -92,19 +91,19 @@
 .file-input input {
   margin-left: 40px;
   margin-bottom: 10px;
-  width: 80%;  /* Full width to fully occupy the space */
+  width: 80%;  
   padding: 12px;
   background-color: transparent;
   border: 1px solid #ddd;
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-size: 18px; /* Larger text for file input */
+  font-size: 18px; 
 }
 
 .file-input input:hover {
   background-color: #f0f0f0;
-  border-color: skyblue; /* Sky blue on hover */
+  border-color: skyblue; 
 }
 
 .signup-btn {
@@ -114,41 +113,38 @@
   color: white;
   border: none;
   border-radius: 8px;
-  font-size: 20px; /* Larger button text */
+  font-size: 22px;
+  font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.2s;
 }
 
 .signup-btn:hover {
-  background-color: skyblue; /* Sky blue for the button hover */
+  background-color: skyblue; 
   transform: scale(1.05);
 }
 
-a {
-  text-decoration: none;
-  color: #ff7f00;
-}
-
 a:hover {
-  color: skyblue; /* Sky blue on all links */
+  color: skyblue; 
 }
 
 .back-home, .login-link {
   display: block;
   text-align: center;
   margin-top: 10px;
-  font-size: 18px; /* Larger text */
-  padding: 12px 25px;  /* Adjust padding for a more compact look */
-  border-radius: 25px; /* Rounds the corners */
+  font-size: 17px;
+  padding: 12px 25px; 
+  border-radius: 25px;
   background-color: #fff;
   transition: all 0.3s ease;
   margin-left: auto;
   margin-right: auto;
-  width: auto; /* Ensures the width is auto, not full width */
+  width: auto; 
 }
 
 .back-home:hover, .login-link:hover {
-  background-color: skyblue; /* Sky blue background on hover */
+  background-color: skyblue; 
   color: white;
   transform: scale(1.05);
+  font-size: 20px;
 }

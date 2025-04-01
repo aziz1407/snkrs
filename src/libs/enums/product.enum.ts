@@ -1,14 +1,12 @@
 export enum ProductSize {
-  S = 40,
-  M = 41,
-  L = 42,
-  XL = 43,
+  S = "40",
+  M = "41",
+  L = "42",
+  XL = "43",
 }
 
 export enum ProductFilter {  //instead of productVolume
    MEN = "MEN",
-   WOMEN = "WOMEN",
-  //  KIDS = "KIDS"
 }
 
 export enum ProductStatus {

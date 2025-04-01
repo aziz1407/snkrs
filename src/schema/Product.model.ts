@@ -33,9 +33,9 @@ const productSchema = new Schema({
   },
 
   productSize: {
-    type: Number,
-    enum: ProductSize,
-    default: ProductSize.L,
+    type: String,
+    enum: Object.values(ProductSize), 
+    default: ProductSize.L, 
   },
 
   productFilter: {
