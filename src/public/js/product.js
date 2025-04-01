@@ -3,22 +3,18 @@ console.log("Products frontend javascript file");
 $(function () {
     $(".product-collection").on("change", () => {
         const selectedValue = $(".product-collection").val();
-        if(selectedValue === "DRINK") {
-            $("#product-collection").hide();
-            $("#product-volume").show();
-        } else {
-            $("#product-volume").hide();
-            $("#product-collection").show();
+        if(selectedValue === "NIKE", "ADIDAS", "PUMA", "SKECHERS", "MIX") {
+            $("#product-size").show();
         }
     });
 
     $("#process-btn").on("click", () => {
-        $(".dish-container").slideToggle(500);
-        $("#process-btn").css("display", "none");
+        $(".prod-container").slideToggle(500);
+        $("#process-btn").css("display", "");
     });
 
     $("#cancel-btn").on("click", () => {
-        $(".dish-container").slideToggle(100);
+        $(".prod-container").slideToggle(100);
         $("#process-btn").css("display", "flex");
     });
 
@@ -63,20 +59,21 @@ function validateForm() {
 
 function previewFileHandler(input, order) {
     const imgClassName = input.className;
-    console.log("input:", input)
-   
-    const file = $(`.${imgClassName}`).get(0).files[0];
+    const file = $(input).get(0).files[0]; // Get the first file from the input
+
     const fileType = file['type'];
     const validImageType = ['image/jpg', 'image/jpeg', 'image/png'];
+    
     if(!validImageType.includes(fileType)) {
-    alert('Please insert only jpeg, jpg, png')
-} else {
-    if(file) {
-        const reader = new FileReader();
-        reader.onload = function() {
-            $(`#image-section-${order}`).attr('src', reader.result);
+        alert('Please insert only jpeg, jpg, png');
+    } else {
+        if(file) {
+            const reader = new FileReader();
+            reader.onload = function() {
+                // Display the image preview on the appropriate section
+                $(`#image-section-${order}`).attr('src', reader.result);
+            };
+            reader.readAsDataURL(file); // Read the file as data URL
+        }
     }
-    reader.readAsDataURL(file);
-  }
- }
 }
