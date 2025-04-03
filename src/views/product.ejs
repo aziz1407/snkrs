@@ -10,27 +10,42 @@
           <a class="nav-link active" href="/admin/">Home</a>
         </li>
         <li class="nav-item" style="cursor: pointer">
-          <a class="nav-link" href="/admin/product/all">Products</a>
+          <a class="nav-link" href="/admin/product/all">Kicks</a>
         </li>
         <li class="nav-item" style="cursor: pointer">
           <a class="nav-link" href="/admin/user/all">Members</a>
         </li>
-        <li
-          class="nav-item"
-          style="cursor: pointer"
-          onclick="return confirm('Do you want to logout?')"
-        >
-          <a class="nav-link" href="/admin/logout">Exit</a>
+        <li class="nav-item" style="cursor: pointer" onclick="showLogoutPopup()">
+          <a class="nav-link" style="color: #ffffff; font-weight: bold;">Exit</a>
         </li>
+        
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script>
+          function showLogoutPopup() {
+            Swal.fire({
+              title: "Are you sure?",
+              text: "Do you really want to logout?",
+              icon: "warning",
+              showCancelButton: true,
+              confirmButtonColor: "#3085d6",
+              cancelButtonColor: "#d33",
+              confirmButtonText: "Yes, logout!",
+            }).then((result) => {
+              if (result.isConfirmed) {
+                window.location.href = "/admin/logout";
+              }
+            });
+          }
+        </script>
       </ul>
     </div>
 
     <div class="store-menu-frame">
       <div class="board">
         <div class="products-table">
-          <span class="new-prod-txt" style="margin-bottom: 30px">
+          <h2 class="new-prod-txt" style="margin-bottom: 30px;">
             STORE MENU
-          </span>
+          </h2>
           <table class="table table-bordered table-hover">
             <thead class="thead-light">
               <tr class="thead-light">
@@ -73,9 +88,9 @@
             class="long-input"
             style="align-items: flex-end; margin-bottom: 25px"
           >
-            <button class="btn btn-primary" id="process-btn">
+            <!-- <button class="btn btn-primary" id="process-btn">
               New Product
-            </button>
+            </button> -->
           </div>
         </div>
         <form
@@ -86,11 +101,11 @@
           enctype="multipart/form-data"
         >
           <div class="long-input" style="display: flex; align-items: center">
-            <span class="new-prod-txt">NEW SNEAKER DESC</span>
+            <span class="new-snkrs-txt">New snkrs</span>
           </div>
           <div class="login-input-frame">
             <div class="long-input">
-              <label>Product Name</label>
+              <label style="font-weight: bold;">Product Name *</label>
               <input
                 type="text"
                 placeholder="Name"
@@ -107,7 +122,7 @@
           </div>
           <div class="half-input-frame">
             <div class="half-input">
-              <label>Product Price</label>
+              <label style="font-weight: bold;">Product Price *</label>
               <input
                 type="number"
                 placeholder="Price"
@@ -116,7 +131,7 @@
               />
             </div>
             <div class="half-input">
-              <label>Product Stock</label>
+              <label style="font-weight: bold;">Product Stock *</label>
               <input
                 type="number"
                 placeholder="Counts"
@@ -127,7 +142,7 @@
           </div>
           <div class="half-input-frame">
             <div class="half-input">
-              <label>Brand</label>
+              <label style="font-weight: bold;">Brand *</label>
               <select class="product-collection" name="productCollection">
                 <option value="NIKE" selected>Nike</option>
                 <option value="ADIDAS">Adidas</option>
@@ -138,7 +153,7 @@
             </div>
 
             <div class="half-input" id="product-collection">
-              <label>Product Size</label>
+              <label style="font-weight: bold;">Product Size *</label>
               <select class="form-control" name="productSize">
                 <option value="40">Small (40)</option>
                 <option value="41">Medium (41)</option>
@@ -148,15 +163,15 @@
             </div>
           </div>
           <div class="long-input">
-            <label>Product Description</label>
+            <label style="font-weight: bold;">Product Description *</label>
             <textarea name="productDesc" class="product-desc"></textarea>
           </div>
 
           <div class="img-frame">
-            <label>Product Images</label>
+            <label style="font-weight: bold;">Product Images *</label>
             <div class="media-frame">
                 <div class="upload-img-box">
-                    <img src="/img/upload.svg" class="1" id="image-section-1" />
+                    <img src="" class="1" id="image-section-1" />
                     <input
                         type="file"
                         id="file"
@@ -167,7 +182,7 @@
                     />
                 </div>
                 <div class="upload-img-box">
-                    <img src="/img/upload.svg" class="2" id="image-section-2" />
+                    <img src="" class="2" id="image-section-2" />
                     <input
                         type="file"
                         id="file"
@@ -177,7 +192,7 @@
                     />
                 </div>
                 <div class="upload-img-box">
-                    <img src="/img/upload.svg" class="3" id="image-section-3" />
+                    <img src="" class="3" id="image-section-3" />
                     <input
                         type="file"
                         id="file"
@@ -186,27 +201,8 @@
                         onchange="previewFileHandler(this, 3)" 
                     />
                 </div>
-                <div class="upload-img-box">
-                    <img src="/img/upload.svg" class="4" id="image-section-4" />
-                    <input
-                        type="file"
-                        id="file"
-                        name="productImages4"  
-                        class="image-four"
-                        onchange="previewFileHandler(this, 4)" 
-                    />
-                </div>
-                <div class="upload-img-box">
-                    <img src="/img/upload.svg" class="5" id="image-section-5" />
-                    <input
-                        type="file"
-                        id="file"
-                        name="productImages5" 
-                        class="image-five"
-                        onchange="previewFileHandler(this, 5)" 
-                    />
-                </div>
-                <input name="restaurantIid" class="restaurant-id" hidden />
+               
+                <input name="adminId" class="admin-id" hidden />
             </div>
         </div>
         

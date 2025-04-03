@@ -133,7 +133,7 @@ adminController.updateChosenUser = async (req: Request, res: Response) => {
   }
 };
 
-adminController.verifyRestaurant = ( //middleware 
+adminController.verifyAdmin = ( //middleware 
   req: AdminRequest, 
   res: Response,
   next: NextFunction

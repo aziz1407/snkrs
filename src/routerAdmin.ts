@@ -26,20 +26,20 @@ routerAdmin
   /**Product */
 routerAdmin.get(
   "/product/all",
-  adminController.verifyRestaurant, //middleware pattern
+  adminController.verifyAdmin, //middleware pattern
   productController.getAllProducts
 );
 
 routerAdmin.post(
   "/product/create",
-  adminController.verifyRestaurant,
-  makeUploader("products").array("productImages", 5),
+  adminController.verifyAdmin,
+  makeUploader("products").any(),
   productController.createNewProduct
 );
 
 routerAdmin.post(
   "/product/:id",
-  adminController.verifyRestaurant, //:id=param=which product is being updated
+  adminController.verifyAdmin, //:id=param=which product is being updated
   productController.updateChosenProduct
 );
 
@@ -47,13 +47,13 @@ routerAdmin.post(
 
 routerAdmin.get(
   "/user/all",
-  adminController.verifyRestaurant,
+  adminController.verifyAdmin,
   adminController.getUsers
 );
 
 routerAdmin.post(
   "/user/edit",
-  adminController.verifyRestaurant,
+  adminController.verifyAdmin,
   adminController.updateChosenUser
 );
 

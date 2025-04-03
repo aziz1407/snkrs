@@ -19,8 +19,8 @@
 
 .login-container .login-frame {
   position: relative;
-  width: 520px;
-  height: 500px;
+  width: 620px;
+  height: auto;
   display: flex;
   flex-direction: column;
   border-radius: 15px;
@@ -107,6 +107,28 @@
   border-color: skyblue;
   box-shadow: 0 0 8px rgba(135, 206, 250, 0.3);
   outline: none;
+}
+
+.upload-section {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15px; 
+}
+
+.upload-preview {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.upload-preview img {
+  width: 120%;
+  height: 120%;
+  object-fit: cover;
 }
 
 .login-container .login-btn {

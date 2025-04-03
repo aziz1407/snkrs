@@ -1,34 +1,43 @@
 .home-container {
   position: relative;
-  display: flex;
-  width: auto;
-  height: auto;
-  min-height: 100%;
+  width: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
 }
 
 .home-container a {
   text-decoration: none;
-  color: #000000;
+  color: #1a1a1a;
 }
 
 .home-container .nav-item a {
-  color: #e3c08d;
+  color: #ffcc80;
+  font-size: 35px;
+  padding: 10px 15px;
+  font-family: monospace;
+  transition: color 0.3s ease-in-out;
+}
+
+.home-container .nav-item a:hover {
+  font-size: 36px;
+  text-decoration: underline;
 }
 
 .home-container .nav-item a.disabled {
-  color: #898071;
+  color: #e2f2fa;
 }
 
- .navigation-menu {
-  position: relative;
-  display: flex;
-  align-items: fl;
-  z-index: 10000;
-  color: #efefee;
-  font-size: 40px;
+.home-container .navigation-menu {
+  width: 100%;
+  text-align: center;
+  padding: 15px 0;
+  background: rgba(201, 231, 240, 0.8);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
   font-family: monospace;
   margin-bottom: 270px;
 }
@@ -38,11 +47,10 @@
   padding: 0;
   margin: 0;
 }
+
 body {
-  background: #151d29;
   background: #d6e7f7;
   color: hsl(0, 0%, 98%);
-  /* center the label in the viewport */
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -50,27 +58,29 @@ body {
   transition: 0.75s ease-in-out;
 }
 
-/* absolute position the input element on top of the accompanying svg element */
 label {
   position: relative;
 }
+
 label input {
   position: absolute;
-  top: 0%;
-  left: 0%;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   opacity: 0;
 }
+
 label svg {
   width: 350px;
   height: auto;
-  display: block
+  display: block;
 }
 
 label input + svg .light {
   transition: opacity 0.75s cubic-bezier(0.68, 0.25, 0.265, 1);
 }
+
 label input + svg .translate,
 label input + svg .rotate,
 label input + svg .background,
