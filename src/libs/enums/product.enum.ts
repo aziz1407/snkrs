@@ -20,6 +20,6 @@ export enum ProductCollection {
   NIKE = "NIKE",
   ADIDAS = "ADIDAS",
   PUMA = "PUMA",
-  SKECHERS = "SKECHERS",
+  NEW_BALANCE = "NEW BALANCE",
   MIX = "MIX"
 }

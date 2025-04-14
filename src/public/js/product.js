@@ -3,7 +3,7 @@ console.log("Products frontend javascript file");
 $(function () {
     $(".product-collection").on("change", () => {
         const selectedValue = $(".product-collection").val();
-        if (["NIKE", "ADIDAS", "PUMA", "SKECHERS", "MIX"].includes(selectedValue)) {
+        if (["NIKE", "ADIDAS", "PUMA", "NEW BALANCE", "MIX"].includes(selectedValue)) {
             $("#product-size").show();
         }
     });
