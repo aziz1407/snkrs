@@ -7,7 +7,7 @@ import {
 import Errors, { HttpCode, Message } from "../libs/error";
 import { ProductStatus } from "../libs/enums/product.enum";
 import { T } from "../libs/types/common";
-import { ObjectId } from "mongoose";
+import { ObjectId, Types } from "mongoose";
 
 
 import ProductModel from "../schema/Product.model";
@@ -28,7 +28,7 @@ class ProductService {
       /*SPA*/
 
   public async getProducts(inquiry: ProductInquiry): Promise<Product[]> {
-    const match: T = { productStatus: ProductStatus.HOLD };
+    const match: T = { productStatus: ProductStatus.HOLD};
     if (inquiry.productCollection) 
       match.productCollection = inquiry.productCollection;
     if (inquiry.search) {
@@ -54,10 +54,7 @@ class ProductService {
     return result;
   }
 
-  public async getProduct(
-    memberId: ObjectId | null,
-    id: string
-  ): Promise<Product> {
+  public async getProduct(memberId: Types.ObjectId | null, id: string): Promise<Product> {
     const productId = shapeIntoMongooseObjectId(id);
     let result = await this.productModel
       .findOne({

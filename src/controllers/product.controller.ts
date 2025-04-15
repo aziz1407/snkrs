@@ -43,7 +43,7 @@ productController.getProduct = async (req: ExtendedRequest, res: Response) => {
     console.log("getProduct");
     
     const {id} = req.params;
-    const memberId: ObjectId | null = req.member?._id ?? null,
+    const memberId = req.member?._id ?? null,
     result = await productService.getProduct(memberId, id);
 
     res.status(HttpCode.OK).json(result);
@@ -53,6 +53,7 @@ productController.getProduct = async (req: ExtendedRequest, res: Response) => {
     else res.status(Errors.standard.code).json(Errors.standard);
   }
 }
+
 
 //SSR
 productController.getAllProducts = async (req: Request, res: Response) => {

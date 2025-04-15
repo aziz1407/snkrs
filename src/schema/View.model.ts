@@ -1,6 +1,5 @@
-import mongoose, { Schema } from "mongoose";
+import mongoose, { Schema, Types } from "mongoose";
 import { ViewGroup } from "../libs/enums/view.enum";
-import ObjectId from "mongoose";
 
 const viewSchema = new Schema(
   {
@@ -11,13 +10,13 @@ const viewSchema = new Schema(
     },
 
     memberId: {
-      type: ObjectId,
+      type: Types.ObjectId, // 
       required: true,
       ref: "Member",
     },
 
     viewRefId: {
-      type: ObjectId,
+      type: Types.ObjectId, // 
       required: true,
     },
   },
