@@ -12,6 +12,8 @@ import routerAdmin from "./routerAdmin";
 import { T } from "./libs/types/common";
 import { MORGAN_FORMAT } from "./config";
 import router from "./router";
+import {Server as SocketIOServer} from "socket.io";
+import http from "http";
 
 // 2.TCP, Core level connection, works solely with sessions, increases and updates
 const MongoDBStore = ConnectMongoDB(session);
@@ -57,5 +59,24 @@ app.set('view engine', 'ejs');
 app.use('/admin', routerAdmin); //SSR: EJS
 app.use('/', router);           //CSR: REACT
 
-export default app;
+const server = http.createServer(app);
+const io = new SocketIOServer(server, {
+  cors: {
+    origin: true,
+    credentials: true,
+  },
+});
+
+let summaryClient = 0;
+io.on("connection", (socket) => {
+  summaryClient++;
+  console.log(`Connection & total [${summaryClient}]`);
+
+  socket.on("disconnect", () => {
+    summaryClient--;
+    console.log(`Disconnection & total [${summaryClient}]`);
+  });
+});
+
+export default server;
 
