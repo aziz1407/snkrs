@@ -1,5 +1,7 @@
 import dotenv from "dotenv";
-dotenv.config();
+dotenv.config({
+    path: process.env.NODE_ENV === "production" ? ".env.production" : ".env",
+});
 import mongoose from 'mongoose';
 // mongoose has broader features than mongodb itself
 import server from './app';
